@@ -1,0 +1,52 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "myapp-dashboard",
+    "title": "MyApp Dashboard",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Total Requests",
+        "targets": [
+          {
+            "target": "myapp_requests_total",
+            "refId": "A"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": "Requests",
+            "min": 0
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Request Duration",
+        "targets": [
+          {
+            "target": "myapp_request_duration_seconds",
+            "refId": "B"
+          }
+        ],
+        "xaxis": {
+          "mode": "time"
+        },
+        "yaxes": [
+          {
+            "format": "seconds",
+            "label": "Duration (s)",
+            "min": 0
+          }
+        ]
+      }
+    ],
+    "schemaVersion": 16,
+    "version": 1
+  },
+  "overwrite": true
+}
