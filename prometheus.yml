@@ -3,6 +3,6 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'main'
+  - job_name: 'myapp'
     static_configs:
-      - targets: ['main:8080']
+      - targets: ['app:6060']
