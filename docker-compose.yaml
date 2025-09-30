@@ -27,7 +27,7 @@ services:
       - mylocal
 
   grafana:
-    image: grafana/grafana
+    image: zhodaran/grafana:geoservice
     ports:
       - "3000:3000"
     environment:
