@@ -2,6 +2,7 @@ package http
 
 import (
 	"net/http"
+	"time"
 
 	NetPprof "net/http/pprof"
 
@@ -68,4 +69,15 @@ func Router(resp entity.Responder, geoService entity.GeoProvider, cache *adapter
 	})
 
 	return r
+}
+
+func MyHandler(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
+		defer func() {
+			requestDuration.Observe(time.Since(start).Seconds())
+			requestsTotal.Inc()
+		}()
+		next(w, r) // Вызов следующего обработчика
+	}
 }
