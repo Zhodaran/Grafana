@@ -6,3 +6,4 @@ scrape_configs:
   - job_name: 'myapp'
     static_configs:
       - targets: ['app:6060']
+    metrics_path: /metrics
